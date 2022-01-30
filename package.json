@@ -1,0 +1,27 @@
+{
+    "name": "model_pool",
+    "version": "0.1.0",
+    "description": "description",
+    "main": "index.js",
+    "repository": "git@github.com:ffreemt/align-model-pool.git",
+    "author": "ffreemt",
+    "license": "MIT",
+    "dependencies": {
+        "npm-run-all": "^4.1.5"
+    },
+    "scripts": {
+        "start": "pyright && pytest && yarn style",
+        "test": "nodemon -w tests -w model_pool -x pytest tests",
+        "pyright": "nodemon -w model_pool -w .venv -e .py -x pyright model_pool tests",
+        "pytest": "nodemon -w tests -w model_pool -e .py -x pytest tests model_pool",
+        "style": "nodemon -w model_pool -w tests -x \"black tests model_pool && python -m flake8\"",
+        "docstyle": "nodemon -w model_pool -w tests -x pydocstyle --convention=google tests model_pool",
+        "pylint": "nodemon -w model_pool -e .py -x pylint model_pool",
+        "test:model_pool": "nodemon -w tests -e .py -x pytest -k model_pool tests",
+        "publish": "poetry build && poetry publish",
+        "black": "black tests model_pool",
+        "flake8": "flake8 tests model_pool",
+        "pep257": "pep257 tests model_pool",
+        "final": "run-s pep257 black flake8 pytest"
+    }
+}

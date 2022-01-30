@@ -29,7 +29,7 @@ from model_pool.fetch_check_aux import fetch_check_aux
 def load_model(model_name, dir_loc=None, alive_bar_on=True):
     """Load local model_name=model_s if present, else fetch from hf.co."""
     # prepare aux file for model-l
-    if model_name in ["model-l"]:
+    if model_name in ["model-l-"]:
         try:
             fetch_check_aux()
         except Exception as exc:

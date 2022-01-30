@@ -26,13 +26,12 @@ from logzero import logger
 
 from model_pool.fetch_check_aux import fetch_check_aux
 
-# prepare aux file for model-l
-if model_name in ["model-l"]:
-    try:
-        fetch_check_aux()
-    except Exception as exc:
-        logger.error(" fetch_check_aux() exc: %s", exc)
-        raise
+# prepare aux file for "model-l"
+try:
+    fetch_check_aux()
+except Exception as exc:
+    logger.error(" fetch_check_aux() exc: %s", exc)
+    raise
 
 
 def load_model(model_name, dir_loc=None, alive_bar_on=True):

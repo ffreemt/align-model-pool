@@ -23,7 +23,12 @@ clas = joblib.load(_)
 # pylint: disable=invalid-name, wrong-import-position, wrong-import-order
 
 from install import install
-_ = [*map(install, ["huggingface_hub", "alive-progress", "sentencepiece", "transformers"])]  # noqa
+
+_ = [
+    *map(
+        install, ["huggingface_hub", "alive-progress", "sentencepiece", "transformers"]
+    )
+]
 
 from pathlib import Path
 import hashlib

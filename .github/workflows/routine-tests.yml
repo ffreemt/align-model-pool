@@ -28,5 +28,5 @@ jobs:
           # poetry run pytest
       - name: Run pytest
         run: |
-        # poetry run pytest -s
         poetry run pytest tests/test_fetch_check_aux.py
+        # poetry run pytest -s

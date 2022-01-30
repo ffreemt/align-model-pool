@@ -1,5 +1,5 @@
 """Test load_model model-l."""
-from model_pool import load_model
+from model_pool.load_model import load_model
 from logzero import logger
 
 try:

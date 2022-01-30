@@ -3,7 +3,7 @@ from model_pool import load_model
 from logzero import logger
 
 try:
-    clas = load_model("model-l")
+    clas = load_model("model-l", alive_bar_on=False)
 except Exception as exc:
     logger.error("load_model('model-l'): %s", exc)
     raise SystemExit(1) from exc

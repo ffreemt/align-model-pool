@@ -44,4 +44,4 @@ def load_model_s(alive_bar_on=True):
     return model
 
 
-model_s = load_model_s()
+# model_s = load_model_s()

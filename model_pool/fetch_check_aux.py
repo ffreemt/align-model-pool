@@ -40,11 +40,11 @@ from logzero import logger
 from huggingface_hub import hf_hub_download
 
 
-def fetch_check_aux():
+def fetch_check_aux(default="~"):
     """Fetch and check aux file for modes-l."""
     filename = "d23ec1d4898d7173d13994fbd662fa3243bf8a23744748d21115317316bd5e1b.a89eb3c0add0e1b04b46be11a1bc1a65b92fdae1bbb04124701ff2e6acfccc75"
     repo = "mikeee/model_s"
-    local_dir = Path("~/.cache/huggingface/transformers").expanduser()
+    local_dir = Path(f"{default}/.cache/huggingface/transformers").expanduser()
     local_dir.mkdir(parents=True, exist_ok=True)
     local_filepath = local_dir / filename
 

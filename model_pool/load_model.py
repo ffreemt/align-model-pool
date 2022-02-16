@@ -28,7 +28,7 @@ from model_pool.fetch_check_aux import fetch_check_aux
 
 # prepare aux file for "model-l", this does not seem to work on gh workflow
 try:
-    fetch_check_aux()
+    fetch_check_aux("/home/user")
 except Exception as exc:
     logger.error(" fetch_check_aux() exc: %s", exc)
     raise

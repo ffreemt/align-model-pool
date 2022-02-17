@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "model_pool"
-version = "0.1.0"
+version = "0.1.1"
 description = "pack_name descr "
 authors = ["ffreemt"]
 license = "MIT"

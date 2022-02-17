@@ -22,6 +22,7 @@ clas = joblib.load(_)
 """
 # pylint: disable=invalid-name, wrong-import-position, wrong-import-order
 
+_ = """
 from install import install
 
 _ = [
@@ -29,6 +30,7 @@ _ = [
         install, ["huggingface_hub", "alive-progress", "sentencepiece", "transformers"]
     )
 ]
+# """
 
 from pathlib import Path
 import hashlib

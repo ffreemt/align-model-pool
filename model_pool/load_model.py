@@ -1,6 +1,7 @@
 """Load model_l, based on model_s in radiobee-aliger."""
 # pylint: disable=invalid-name, wrong-import-position, wrong-import-order, duplicate-code
 
+_ = """
 from install import install
 
 _ = [
@@ -16,6 +17,7 @@ _ = [
         ],
     )
 ]
+# """
 
 from pathlib import Path
 

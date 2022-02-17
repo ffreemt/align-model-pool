@@ -34,6 +34,7 @@ jobs:
           # poetry run pytest tests/test_load_model_model_l.py
           if [ "$RUNNER_OS" == "Linux" ]; then
             # poetry run pytest tests -k sanity
+            echo pass
           elif [ "$RUNNER_OS" == "Windows" ]; then
             poetry run pytest tests -k sanity
           else

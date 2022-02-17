@@ -32,5 +32,12 @@ jobs:
           # poetry run pytest tests/test_fetch_check_aux.py  # OK
           # poetry run pytest tests/test_model_s.py  # OK
           # poetry run pytest tests/test_load_model_model_l.py
-          poetry run pytest tests -k sanity
-          poetry run pytest tests
+          if [ "$RUNNER_OS" == "Linux" ]; then
+            poetry run pytest tests -k sanity
+          elif [ "$RUNNER_OS" == "Windows" ]; then
+            poetry run pytest tests -k sanity
+          else
+              echo "$RUNNER_OS not supported"
+              exit 1
+          fi
+        shell: bash

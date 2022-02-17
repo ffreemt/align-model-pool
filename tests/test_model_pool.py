@@ -1,4 +1,5 @@
 """Test model_pool."""
+# pylint: disable=broad-except
 from model_pool import __version__
 from model_pool import model_pool
 

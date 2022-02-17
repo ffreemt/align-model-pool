@@ -39,6 +39,7 @@ alive-progress = "^2.3.1"
 # transformers = "^4.16.2"
 # sentence-transformers = "^2.2.0"
 joblib = "^1.1.0"
+sentence-transformers = "^2.2.0"
 
 [tool.poe.executor]
 type = "poetry"

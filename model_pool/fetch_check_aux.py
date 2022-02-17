@@ -18,7 +18,8 @@ _ = cached_download(url)
 print(_)
 clas = joblib.load(_)
 
-# %time clas('test', ['test', 'test more', 'no test', 'on test', '测试', '测试测试', 'test测试', 'this', 'that test'], multi_lable=1)
+# %time clas('test', ['test', 'test more', 'no test', 'on test',
+'测试', '测试测试', 'test测试', 'this', 'that test'], multi_lable=1)
 """
 # pylint: disable=invalid-name, wrong-import-position, wrong-import-order, line-too-long
 

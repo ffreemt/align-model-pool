@@ -33,7 +33,7 @@ jobs:
           # poetry run pytest tests/test_model_s.py  # OK
           # poetry run pytest tests/test_load_model_model_l.py
           if [ "$RUNNER_OS" == "Linux" ]; then
-            poetry run pytest tests -k sanity
+            # poetry run pytest tests -k sanity
           elif [ "$RUNNER_OS" == "Windows" ]; then
             poetry run pytest tests -k sanity
           else

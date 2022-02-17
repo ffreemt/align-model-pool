@@ -1,17 +1,6 @@
 """Load model_s."""
 # pylint: disable=invalid-name, wrong-import-position, wrong-import-order, duplicate-code
 
-_ = """
-from install import install
-
-_ = [
-    *map(
-        install,
-        ["sentence-transformers", "huggingface-hub", "alive-progress", "logzero"],
-    )
-]
-# """
-
 from pathlib import Path
 
 from alive_progress import alive_bar

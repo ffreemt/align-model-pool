@@ -1,5 +1,5 @@
 """Init."""
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 from .model_pool import model_pool
 from .fetch_check_aux import fetch_check_aux
 

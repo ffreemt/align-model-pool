@@ -6,14 +6,14 @@ Various alignment models for colab and hf-spaces
 ## Install it
 
 ```shell
-pip install model_pool
-# or poetry add model_pool
+pip install model-pool
+# or poetry add model-pool
 # pip install git+htts://github.com/ffreemt/align-model-pool
 # poetry add git+htts://github.com/ffreemt/align-model-pool
 
 # To upgrade
-pip install model_pool -U
-# or poetry add model_pool@latest
+pip install model-pool -U
+# or poetry add model-pool@latest
 ```
 
 ## Use it

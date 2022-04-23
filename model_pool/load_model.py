@@ -40,6 +40,8 @@ from model_pool.fetch_check_aux import fetch_check_aux
 try:
     # fetch_check_aux("/home/user")
     fetch_check_aux("/root")
+except PermissionError:  # for gh workflow
+    fetch_check_aux("~")
 except Exception as e:
     logger.error(" fetch_check_aux() exc: %s", e)
     raise

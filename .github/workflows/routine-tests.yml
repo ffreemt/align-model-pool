@@ -36,7 +36,7 @@ jobs:
             poetry run pytest tests -k sanity
             poetry run pytest tests/test_fetch_check_aux.py  # OK
             poetry run pytest tests/test_model_s.py
-            poetry run pytest tests/test_load_model_model_l.py
+            # poetry run pytest tests/test_load_model_model_l.py
             # echo pass
           elif [ "$RUNNER_OS" == "Windows" ]; then
             poetry run pytest tests  # -k sanity

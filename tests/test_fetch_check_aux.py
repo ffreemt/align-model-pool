@@ -1,5 +1,6 @@
 """Test fetch_check_aux."""
-from model_pool import fetch_check_aux
+# from model_pool import fetch_check_aux
+from model_pool.fetch_check_aux import fetch_check_aux
 from logzero import logger
 
 

@@ -38,13 +38,13 @@ from model_pool.fetch_check_aux import fetch_check_aux
 
 # prepare aux file for "model-l", this does not seem to work on gh workflow
 try:
-    # fetch_check_aux("/home/user")
+    # fetch_check_aux("/home/user")  # for hf spaces?
     fetch_check_aux("/root")
 except PermissionError:  # for gh workflow
+    logger.warning("You ll need to run as root or admin or give write permission to /root/.cache/huggingface or C:\root\.cache\huggingface to this user.")
     fetch_check_aux("~")
 except Exception as e:
     logger.error(" fetch_check_aux() exc: %s", e)
-    logger.warning("You ll need to run as root or admin or give write permission to /root/.cache/huggingface or C:\root\.cache\huggingface to this user.")
     raise
 
 

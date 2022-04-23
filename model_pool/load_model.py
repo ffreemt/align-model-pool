@@ -44,6 +44,7 @@ except PermissionError:  # for gh workflow
     fetch_check_aux("~")
 except Exception as e:
     logger.error(" fetch_check_aux() exc: %s", e)
+    logger.warning("You ll need to run as root or admin or give write permission to /root/.cache/huggingface or C:\root\.cache\huggingface to this user.")
     raise
 
 

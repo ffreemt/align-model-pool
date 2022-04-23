@@ -1,4 +1,12 @@
-"""Load model_l, based on model_s in radiobee-aliger."""
+"""Load model_l, based on model_s in radiobee-aliger.
+
+return _sentencepiece.SentencePieceProcessor_LoadFromFile(self, arg)
+"/root/.cache/huggingface/transformers/d23ec1d4898d7173d13994fbd662fa3243bf8a23744748d21115317316bd5e1b.a89eb3c0add0e1b04b46be11a1bc1a65b92fdae1bbb04124701ff2e6acfccc75"
+
+do as admin in Windows or root in Liux
+fetch_check_aux(default="/root")
+
+"""
 # pylint: disable=invalid-name, wrong-import-position, wrong-import-order, duplicate-code
 
 _ = """
@@ -30,7 +38,8 @@ from model_pool.fetch_check_aux import fetch_check_aux
 
 # prepare aux file for "model-l", this does not seem to work on gh workflow
 try:
-    fetch_check_aux("/home/user")
+    # fetch_check_aux("/home/user")
+    fetch_check_aux("/root")
 except Exception as e:
     logger.error(" fetch_check_aux() exc: %s", e)
     raise
@@ -65,7 +74,7 @@ def load_model(model_name, dir_loc=None, alive_bar_on=True):
         )
         if alive_bar_on:
             with alive_bar(
-                1, title=" Subsequent loading takes ~20 secs ...", length=3
+                1, title=" Subsequent loading takes ~2-3 secs ...", length=3
             ) as progress_bar:
                 try:
                     model = joblib.load(

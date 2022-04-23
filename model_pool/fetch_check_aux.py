@@ -48,7 +48,13 @@ def fetch_check_aux(default="~"):
     filename = "d23ec1d4898d7173d13994fbd662fa3243bf8a23744748d21115317316bd5e1b.a89eb3c0add0e1b04b46be11a1bc1a65b92fdae1bbb04124701ff2e6acfccc75"
     repo = "mikeee/model_s"
     local_dir = Path(f"{default}/.cache/huggingface/transformers").expanduser()
-    local_dir.mkdir(parents=True, exist_ok=True)
+    try:
+        local_dir.mkdir(parents=True, exist_ok=True)
+    except Exception:
+        logger.exception("")
+        logger.warning("You will need to run this as admin or root, or create /root (C:\root) and set write permerssion to this user.")
+        raise
+
     local_filepath = local_dir / filename
 
     sha256checksum = "13c8d666d62a7bc4ac8f040aab68e942c861f93303156cc28f5c7e885d86d6e3"

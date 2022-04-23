@@ -35,7 +35,7 @@ def load_model_s(alive_bar_on=True):
     )
     if alive_bar_on:
         with alive_bar(
-            1, title=" Subsequent loading takes ~20 secs ...", length=3
+            1, title=" Subsequent loading takes ~2-3 secs ...", length=3
         ) as progress_bar:
             model = joblib.load(
                 cached_download(hf_hub_url("mikeee/model_s", "model_s"))

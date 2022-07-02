@@ -41,12 +41,12 @@ try:
     # fetch_check_aux("/home/user")  # for hf spaces?
     fetch_check_aux("/root")
 except PermissionError:  # for gh workflow
-    logger.warning("You ll need to run as root or admin or give write permission to /root/.cache/huggingface or C:\root\.cache\huggingface to this user. Trying fetch_check_aux('~')")
+    logger.warning(r"You ll need to run as root or admin or give write permission to /root/.cache/huggingface or C:\root\.cache\huggingface to this user. Trying fetch_check_aux('~')")
     try:
         fetch_check_aux("~")
     except Exception as _:
         logger.error("fetch_check_aux('~') exc: %s", _)
-        raise 
+        raise
 except Exception as e:
     logger.error(" fetch_check_aux() exc: %s", e)
     raise

@@ -11,9 +11,11 @@ from logzero import logger
 
 def load_model_s(alive_bar_on=True):
     """Load local model_s if present, else fetch from hf.co."""
-    file_loc = "radiobee/model_s"
+    file_loc = Path(__file__).absolute().with_name("model_s")
     if Path(file_loc).exists():
         # raise Exception(f"File {file_loc} does not exist.")
+
+        logger.info("Trying to load %s", file_loc)
 
         if alive_bar_on:
             with alive_bar(

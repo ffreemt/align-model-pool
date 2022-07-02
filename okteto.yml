@@ -1,0 +1,40 @@
+name: align-model-pool
+
+# The build section defines how to build the images of your development environment
+# More info: https://www.okteto.com/docs/reference/manifest/#build
+# build:
+#   my-service:
+#     context: .
+
+
+# The deploy section defines how to deploy your development environment
+# More info: https://www.okteto.com/docs/reference/manifest/#deploy
+# deploy:
+  # commands:
+    # - name: Deploy
+      # # command: echo 'Replace this line with the proper 'helm' or 'kubectl' commands to deploy your development environment'
+      # command: kubectl
+
+# The dependencies section defines other git repositories to be deployed as part of your development environment
+# More info: https://www.okteto.com/docs/reference/manifest/#dependencies
+# dependencies:
+#   - https://github.com/okteto/sample
+# The dev section defines how to activate a development container
+# More info: https://www.okteto.com/docs/reference/manifest/#dev
+dev:
+  model-pool:
+    # image: python:3.8
+    # image: okteto/python:3
+    # image: python:3.8.13-slim-bullseye
+    image: python:3.8.13-bullseye
+    command: bash
+    workdir: /usr/src/app
+    sync:
+      - .:/usr/src/app
+    environment:
+      - name=$USER
+    forward:
+      - 8080:80
+    reverse:
+    - 9000:9000
+    autocreate: true
